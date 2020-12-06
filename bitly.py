@@ -7,7 +7,10 @@ from pyrogram.types import Message
 
 @bot.on_message(filters.private & filters.command("start"))
 async def start_(_, msg: Message):
-    await msg.reply(START_MESSAGE.format(msg.from_user.mention))
+    await msg.reply(
+        START_MESSAGE.format(msg.from_user.mention),
+        disable_web_page_preview=True
+    )
 
 
 @bot.on_message(filters.private & filters.text)
@@ -18,7 +21,10 @@ async def reply_bitly_link(_, msg: Message):
     if func.response is False:
         await msg.reply("`Provide Valid Link.`")
     else:
-        await msg.reply(f"**Shorten link:** `{short_url}`")
+        await msg.reply(
+            f"**Shortened Url:** `{short_url}`",
+            disable_web_page_preview=True
+        )
 
 
 if __name__ == "__main__":
