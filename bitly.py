@@ -19,7 +19,10 @@ async def reply_bitly_link(_, msg: Message):
     func = bitly(str(long_url))
     short_url = func.convert_url()
     if func.response is False:
-        await msg.reply("`Provide Valid Link.`")
+        if func.error:
+            await msg.reply(f"`{func.error}`")
+        else:
+            await msg.reply("**ERROR**")
     else:
         await msg.reply(
             f"**Shortened Url:** `{short_url}`",
