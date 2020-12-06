@@ -9,6 +9,7 @@ GUID = os.environ.get("GUID")
 ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN")
 
 START_MESSAGE = """ Hello {},
+
 `I am Bitly Bot to shorten links.
 Send a valid link to shorten.`
 
