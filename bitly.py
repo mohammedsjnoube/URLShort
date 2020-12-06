@@ -19,3 +19,8 @@ async def reply_bitly_link(_, msg: Message):
         await msg.reply("`Provide Valid Link.`")
     else:
         await msg.reply(f"**Shorten link:** `{short_url}`")
+
+
+if __name__ == "__main__":
+    bot.run()
+
