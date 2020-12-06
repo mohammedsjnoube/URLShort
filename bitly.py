@@ -25,7 +25,7 @@ async def reply_bitly_link(_, msg: Message):
             await msg.reply("**ERROR**")
     else:
         await msg.reply(
-            f"**Shortened Url:** `{short_url}`",
+            f"**Shortened Url:**\n`{short_url}`",
             disable_web_page_preview=True
         )
 
