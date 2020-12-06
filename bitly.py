@@ -1,0 +1,21 @@
+from bitly_func import bitly
+from bot import bot, START_MESSAGE
+
+from pyrogram import filters
+from pyrogram.types import Message
+
+
+@bot.on_message(filters.private & filters.command("start"))
+async def start_(_, msg: Message):
+    await msg.reply(START_MESSAGE.format(msg.from_user.mention))
+
+
+@bot.on_message(filters.private & filters.text)
+async def reply_bitly_link(_, msg: Message):
+    long_url = msg.text
+    func = bitly(str(long_url))
+    short_url = func.convert_url()
+    if func.response is False:
+        await msg.reply("`Provide Valid Link.`")
+    else:
+        await msg.reply(f"**Shorten link:** `{short_url}`")
