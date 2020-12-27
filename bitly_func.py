@@ -26,3 +26,21 @@ class bitly():
         else:
             short_url = shorten_res.json().get("link")
         return short_url
+
+class t1p():
+    def __init__(self, link):
+        self.link = link
+        self.response = True
+        self.error = None
+
+    def convert_url(self) -> Optional[str]:
+        long_url = self.link
+        short_url = None
+        url = f'https://iambeginner.de/short/?url={long_url}&srv=t1p'
+        shorten_res = requests.post(url)
+        if shorten_res.status_code == 400:
+            self.response = False
+            self.error = False
+        else:
+            short_url = shorten_res.json().get("shortened")
+        return short_url
