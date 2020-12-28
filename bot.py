@@ -8,12 +8,11 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 GUID = os.environ.get("GUID")
 ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN")
 
-START_MESSAGE = """ Hello {},
+START_MESSAGE = """ Heya {},
 
-`I am Bitly Bot to shorten links.
-Send a valid link to shorten.`
+`I am a URL-Shortener bot with multiple features.`
 
-Made with ❤️ by [Krishna](https://t.me/Krishna_Singhal).
+Made with ❤️ by [BlackStone](https://t.me/BlackStone_BSC).
 """
 
 bot = Client(":memory:",
