@@ -1,4 +1,4 @@
-from bitly_func import bitly
+from url_func import bitly, t1p
 from bot import bot, START_MESSAGE
 
 from pyrogram import filters
