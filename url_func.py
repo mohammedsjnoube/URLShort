@@ -11,8 +11,8 @@ class bitly():
         self.error = None
 
     def convert_url(self) -> Optional[str]:
-        long_url = self.link
-        short_url = None
+        get_long = self.link
+        long_url = get_long.replace("/bitly ", "")
         headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
         url = 'https://api-ssl.bitly.com/v4/shorten'
         shorten_res = requests.post(
@@ -34,9 +34,10 @@ class t1p():
         self.error = None
 
     def convert_url(self) -> Optional[str]:
-        long_url = self.link
+        get_long = self.link
+        long_url = get_long.replace("/t1p ", "")
         short_url = None
-        url = f'https://iambeginner.de/short/?url={long_url}&srv=t1p'
+        url = f'https://s-url.eu/api/url-short/?url={long_url}&srv=t1p'
         shorten_res = requests.post(url)
         if shorten_res.status_code == 400:
             self.response = False
