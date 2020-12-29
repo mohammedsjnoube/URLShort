@@ -19,6 +19,8 @@ class bitly():
             url, json={"group_guid": GUID, "long_url": long_url}, headers=headers
         )
         if shorten_res.status_code == 400:
+            self.response = False
+            self.error = False
             if "INVALID_ARG_LONG_URL" in shorten_res.json().get("message"):
                 self.response, self.error = False, shorten_res.json().get("description")
             else:
