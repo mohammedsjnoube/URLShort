@@ -1,12 +1,14 @@
 import os
-
 from pyrogram import Client
 
-API_ID = int(os.environ.get("API_ID", 0))
-API_HASH = os.environ.get("API_HASH", None)
-BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
-GUID = os.environ.get("GUID")
-ACCESS_TOKEN = os.environ.get("BITLY_TOKEN")
+if bool(os.environ.get("HEROKU", false)):
+    API_ID = int(os.environ.get("API_ID", 0))
+    API_HASH = os.environ.get("API_HASH", None)
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+    GUID = os.environ.get("GUID")
+    ACCESS_TOKEN = os.environ.get("BITLY_TOKEN")
+else:
+    from config import API_ID, API_HASH, BOT_TOKEN, GUID, ACCESS_TOKEN
 
 START_MESSAGE = """ Heya {},
 `I am a URL-Shortener bot with multiple features.`
