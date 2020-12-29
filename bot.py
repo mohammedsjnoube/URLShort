@@ -20,7 +20,7 @@ Made with ❤️ by [BlackStone](https://t.me/BlackStone_BSC).
 USAGE_MESSAGE = """ Heya {},
 `Below is a list of all available Commands.`
 
-__Shorten via...__
+__Shorten URLs via...__
 **Bitly:** `/bitly <url>`
 **t1p:** `/t1p <url>`
 **ogy:** `/ogy <url>`
