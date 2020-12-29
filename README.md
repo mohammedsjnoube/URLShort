@@ -1,2 +1,2 @@
-# Bitly
-Bitly bot to shorten URLs
+# API-Bot
+A bot calling different APIs
