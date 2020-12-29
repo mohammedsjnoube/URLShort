@@ -9,10 +9,19 @@ GUID = os.environ.get("GUID")
 ACCESS_TOKEN = os.environ.get("BITLY_TOKEN")
 
 START_MESSAGE = """ Heya {},
-
 `I am a URL-Shortener bot with multiple features.`
+**Use /usage to check what I can do.**
 
 Made with ❤️ by [BlackStone](https://t.me/BlackStone_BSC).
+"""
+
+USAGE_MESSAGE = """ Heya {},
+`Below is a list of all available Commands.`
+
+__Shorten via...__
+**Bitly:** `/bitly <url>`
+**t1p:** `/t1p <url>`
+**ogy:** `/ogy <url>`
 """
 
 bot = Client(":memory:",
