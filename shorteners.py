@@ -13,6 +13,14 @@ async def start_(_, msg: Message):
     )
 
 
+@bot.on_message(filters.private & filters.command("usage"))
+async def start_(_, msg: Message):
+    await msg.reply(
+        USAGE_MESSAGE,
+        disable_web_page_preview=True
+    )
+
+
 @bot.on_message(filters.private & filters.text & filters.command("bitly"))
 async def reply_bitly_link(_, msg: Message):
     long_url = msg.text
