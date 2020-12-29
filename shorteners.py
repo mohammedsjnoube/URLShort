@@ -1,4 +1,4 @@
-from url_func import bitly, t1p
+from url_func import bitly, t1p, ogy
 from bot import bot, START_MESSAGE
 
 from pyrogram import filters
@@ -34,6 +34,23 @@ async def reply_bitly_link(_, msg: Message):
 async def reply_t1p_link(_, msg: Message):
     long_url = msg.text
     func = t1p(str(long_url))
+    short_url = func.convert_url()
+    if func.response is False:
+        if func.error:
+            await msg.reply(f"`{func.error}`")
+        else:
+            await msg.reply("**ERROR**")
+    else:
+        await msg.reply(
+            f"**Shortened URL:**\n`{short_url}`",
+            disable_web_page_preview=True
+        )
+
+
+@bot.on_message(filters.private & filters.text & filters.command("ogy"))
+async def reply_ogy_link(_, msg: Message):
+    long_url = msg.text
+    func = ogy(str(long_url))
     short_url = func.convert_url()
     if func.response is False:
         if func.error:
