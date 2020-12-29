@@ -1,5 +1,5 @@
 from url_func import bitly, t1p, ogy
-from bot import bot, START_MESSAGE
+from bot import bot, START_MESSAGE, USAGE_MESSAGE
 
 from pyrogram import filters
 from pyrogram.types import Message
@@ -14,7 +14,7 @@ async def start_(_, msg: Message):
 
 
 @bot.on_message(filters.private & filters.command("usage"))
-async def start_(_, msg: Message):
+async def usage_(_, msg: Message):
     await msg.reply(
         USAGE_MESSAGE,
         disable_web_page_preview=True
