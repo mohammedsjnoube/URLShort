@@ -48,7 +48,7 @@ class t1p():
             short_url = shorten_res.json().get("shortened")
         return short_url
 
-    
+
 class ogy():
     def __init__(self, link):
         self.link = link
