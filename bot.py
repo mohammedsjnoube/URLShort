@@ -1,7 +1,7 @@
 import os
 from pyrogram import Client
 
-if bool(os.environ.get("HEROKU", false)):
+if bool(os.environ.get("HEROKU")) == true:
     API_ID = int(os.environ.get("API_ID", 0))
     API_HASH = os.environ.get("API_HASH", None)
     BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
