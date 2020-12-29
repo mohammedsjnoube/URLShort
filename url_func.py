@@ -40,7 +40,8 @@ class t1p():
         url = f'https://s-url.eu/api/url-short/?url={long_url}&srv=t1p'
         shorten_res = requests.post(url)
         if shorten_res.status_code == 400:
-            self.response, self.error = False, "INVALID URL!"
+            self.response = False
+            self.error = False
         else:
             short_url = shorten_res.json().get("shortened")
         return short_url
@@ -59,7 +60,8 @@ class ogy():
         url = f'https://s-url.eu/api/url-short/?url={long_url}&srv=ogy'
         shorten_res = requests.post(url)
         if shorten_res.status_code == 400:
-            self.response, self.error = False, "INVALID URL!"
+            self.response = False
+            self.error = False
         else:
             short_url = shorten_res.json().get("shortened")
         return short_url
