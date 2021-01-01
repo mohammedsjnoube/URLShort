@@ -24,6 +24,7 @@ __Shorten URLs via...__
 **Bitly:** `/bitly <url>`
 **t1p:** `/t1p <url>`
 **ogy:** `/ogy <url>`
+**0cn:** `/0cn <url>`
 """
 
 bot = Client(":memory:",
