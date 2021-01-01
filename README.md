@@ -1,2 +1,2 @@
-# API-Bot
-A bot calling different APIs
+# URLShort
+A bot shortening URLs
