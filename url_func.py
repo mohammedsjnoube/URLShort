@@ -67,3 +67,23 @@ class ogy():
         else:
             short_url = shorten_res.json().get("shortened")
         return short_url
+
+class 0cn():
+    def __init__(self, link):
+        self.link = link
+        self.response = True
+        self.error = None
+
+    def convert_url(self) -> Optional[str]:
+        get_long = self.link
+        long_url = get_long.replace("/ogy ", "")
+        short_url = None
+        url = f'https://s-url.eu/api/url-short/?url={long_url}&srv=0cn'
+        shorten_res = requests.post(url)
+        if shorten_res.status_code == 400:
+            self.response = False
+            self.error = False
+        else:
+            short_url = shorten_res.json().get("shortened")
+        return short_url
+
